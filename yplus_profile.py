@@ -58,7 +58,7 @@ for ii in range(0, nb_proc):
 		for ntcabs in list_ntcabs:
 			print(ntcabs)
 			res_local[:, :] = 0.
-			res_local = res[(ntcabs/period_output-1)*nb_cells_large[ii]:(ntcabs/period_output)*nb_cells_large[ii], :]
+			res_local[0:nb_cells_large[ii], :]  = res[(ntcabs/period_output-1)*nb_cells_large[ii]:(ntcabs/period_output)*nb_cells_large[ii], :]
 			#print(res_large[nb_points_begin:nb_points_end, :])
 			#print(res_local[0:nb_cells_large[ii], :])
 			res_large[nb_points_begin:nb_points_end, :] = res_large[nb_points_begin:nb_points_end, :] + res_local[0:nb_cells_large[ii], :]
